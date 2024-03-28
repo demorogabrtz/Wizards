@@ -60,7 +60,7 @@
   "spell.wizards.fire_breath.description": "Incinerates targets in front, dealing up to {damage} fire spell damage every second.",
   "spell.wizards.fire_meteor.name": "Meteor",
   "spell.wizards.fire_meteor.description": "Crashes a meteors on the target, each causing up to {damage} fire spell damage within {impact_range} blocks.",
-  "spell.wizards.fire_wall.name": "Wall of Fire",
+  "spell.wizards.fire_wall.name": "Wall of Flames",
   "spell.wizards.fire_wall.description": "Creates a wall of fire, lasting {cloud_duration} seconds, dealing up to {damage} fire spell damage continuously to enemies passing thru.",
 
   "spell.wizards.frost_shard.name": "Frost Shard",
