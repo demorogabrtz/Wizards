@@ -92,6 +92,12 @@
     ]
   },
 
+  "fire_wall_ignite": {
+    "sounds": [
+      "wizards:fire_wall_ignite"
+    ]
+  },
+
   "frost_shard_impact": {
     "sounds": [
       "wizards:frost_shard_impact"
