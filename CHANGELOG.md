@@ -5,7 +5,9 @@ Arcane Wizard changes:
   - Teleport the caster forwards by 15 blocks
 
 Fire Wizard changes:
-- 
+- Add new skill: Wall of Fire
+  - Creates a wall of fire, dealing up to fire spell damage continuously to enemies passing thru
+- Update Fire Breath visuals
 
 Frost Wizard changes:
 - 
