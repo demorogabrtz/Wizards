@@ -36,7 +36,7 @@ public class SoundHelper {
             "fire_meteor_impact",
             "fire_wall_ignite",
 
-            "ice_lance_impact",
+            "frost_shard_impact",
             "frost_nova_release",
             "frost_nova_damage_impact",
             "frost_nova_effect_impact",

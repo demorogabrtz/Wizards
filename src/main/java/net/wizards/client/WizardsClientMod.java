@@ -20,7 +20,7 @@ public class WizardsClientMod {
                 new Identifier(WizardsMod.ID, "projectile/fireball_projectile"),
                 new Identifier(WizardsMod.ID, "projectile/fire_meteor"),
                 new Identifier(WizardsMod.ID, "projectile/frostbolt_projectile"),
-                new Identifier(WizardsMod.ID, "projectile/ice_lance_projectile"),
+                new Identifier(WizardsMod.ID, "projectile/frost_shard_projectile"),
                 ArcaneChargeRenderer.modelId,
                 FrozenRenderer.modelId,
                 FrostShieldRenderer.modelId_base,
