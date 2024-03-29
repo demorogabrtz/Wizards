@@ -24,13 +24,6 @@ public class WizardsMod {
             .setDirectory(ID)
             .sanitize(true)
             .build();
-    public static ConfigManager<LootConfig> lootConfig = new ConfigManager<LootConfig>
-            ("loot_v2", Default.lootConfig)
-            .builder()
-            .setDirectory(ID)
-            .sanitize(true)
-            .constrain(LootConfig::constrainValues)
-            .build();
     public static ConfigManager<StructurePoolConfig> villageConfig = new ConfigManager<>
             ("villages", Default.villageConfig)
             .builder()
@@ -45,7 +38,6 @@ public class WizardsMod {
             .build();
 
     public static void init() {
-        lootConfig.refresh();
         itemConfig.refresh();
         effectsConfig.refresh();
         Registry.register(Registries.ITEM_GROUP, Group.KEY, Group.WIZARDS);
