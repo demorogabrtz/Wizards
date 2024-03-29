@@ -65,9 +65,8 @@
         }
       }
     },
-    "animation": "spell_engine:one_handed_area_release",
     "sound": {
-      "id": "spell_engine:generic_frost_release"
+      "id": "wizards:fire_breath_release"
     }
   },
   "impact": [
