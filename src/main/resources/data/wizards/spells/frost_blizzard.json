@@ -6,7 +6,7 @@
   },
   "cast": {
     "duration": 8,
-    "animation": "spell_engine:one_handed_projectile_charge",
+    "animation": "spell_engine:one_handed_sky_charge",
     "sound": {
       "id": "wizards:frost_blizzard_casting",
       "randomness": 0
