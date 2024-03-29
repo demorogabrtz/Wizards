@@ -128,5 +128,10 @@
     "sounds": [
       "wizards:frost_shield_impact"
     ]
+  },
+  "frost_blizzard_casting": {
+    "sounds": [
+      "wizards:frost_blizzard_casting"
+    ]
   }
 }

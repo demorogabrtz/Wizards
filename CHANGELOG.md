@@ -10,7 +10,8 @@ Fire Wizard changes:
 - Update Fire Breath visuals
 
 Frost Wizard changes:
-- 
+- Add new skill: Blizzard
+  - Channels a rain of frost shards down onto your target and nearby enemies
 
 Other changes:
 - Staves and Wands now all come with tier 0 spell, all of them are now able to cast from spell books

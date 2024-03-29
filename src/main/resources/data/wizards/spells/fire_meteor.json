@@ -27,13 +27,13 @@
       "type": "METEOR",
       "meteor": {
         "launch_height": 10,
+        "launch_radius": 4,
         "launch_properties": {
           "velocity": 0.8,
           "extra_launch_count": 2,
           "extra_launch_delay": 5
         },
         "projectile": {
-          "divergence": 20,
           "client_data": {
             "travel_particles": [
               {

@@ -77,6 +77,8 @@
   "spell.wizards.frost_shield.description": "Protects you from attacks, projectiles and fire for {effect_duration} seconds, but also slows down your movement.",
   "effect.wizards.frost_shield": "Frost Shield",
   "effect.wizards.frost_shield.description": "Blocks incoming attacks while active, but slows down movement",
+  "spell.wizards.frost_blizzard.name": "Blizzard",
+  "spell.wizards.frost_blizzard.description": "Channels a rain of frost shards down onto your target and nearby enemies, dealing up to {damage} frost spell damage slowing the target, in {impact_range} blocks radius.",
 
   "advancements.rpg_classes.obtain_wizard_robes.title": "A Wizard Is Never Late",
   "advancements.rpg_classes.obtain_wizard_robes.description": "Acquire a full set of Wizard Robes",

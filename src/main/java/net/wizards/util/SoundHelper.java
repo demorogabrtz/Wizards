@@ -40,7 +40,8 @@ public class SoundHelper {
             "frost_nova_release",
             "frost_nova_damage_impact",
             "frost_nova_effect_impact",
-            "frost_shield_release"
+            "frost_shield_release",
+            "frost_blizzard_casting"
     );
 
     public static Map<String, Float> soundDistances = Map.of(
