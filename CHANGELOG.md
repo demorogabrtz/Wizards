@@ -2,6 +2,8 @@
 
 - Reduce damage done by Wall of Flames
 - Reduce performance impact of Blizzard
+- Increase blast radius of Fireball by 25%
+- 
 
 # 1.1.0
 
