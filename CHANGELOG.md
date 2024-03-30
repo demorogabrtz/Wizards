@@ -1,9 +1,9 @@
 # 1.1.1
 
-- Reduce damage done by Wall of Flames
-- Reduce performance impact of Blizzard
+- Arcane Missiles spell now shoots 2 projectiles, takes longer to cast
 - Increase blast radius of Fireball by 25%
-- 
+- Reduce damage done by Wall of Flames
+- Reduce performance impact of Blizzard 
 
 # 1.1.0
 
