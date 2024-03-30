@@ -1,5 +1,6 @@
 # 1.1.1
 
+- Reduce damage done by Wall of Flames
 - Reduce performance impact of Blizzard
 
 # 1.1.0
