@@ -1,3 +1,7 @@
+# 1.1.2
+
+- Update Italian translation, thanks to @Zano1999
+
 # 1.1.1
 
 - Arcane Missiles spell now shoots 2 projectiles, takes longer to cast
