@@ -1,5 +1,6 @@
-# 1.1.2
+# 1.2.0
 
+- Migrate to new Spell Power Attributes API
 - Update Italian translation, thanks to @Zano1999
 
 # 1.1.1

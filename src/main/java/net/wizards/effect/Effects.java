@@ -9,14 +9,13 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.spell_engine.api.effect.RemoveOnHit;
 import net.spell_engine.api.effect.Synchronized;
-import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellPower;
-import net.spell_power.api.attributes.EntityAttributes_SpellPower;
+import net.spell_power.api.SpellSchools;
 import net.wizards.WizardsMod;
 
 public class Effects {
     public static StatusEffect frozen = new FrozenStatusEffect(StatusEffectCategory.HARMFUL, 0x99ccff)
-            .setVulnerability(MagicSchool.FROST, new SpellPower.Vulnerability(0, 1F, 0F))
+            .setVulnerability(SpellSchools.FROST, new SpellPower.Vulnerability(0, 1F, 0F))
             .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
                     "052f3166-8ae7-11ed-a1eb-0242ac120002",
                     -1F,
@@ -39,7 +38,7 @@ public class Effects {
     public static void register() {
         /// Adding attribute modifier here due to relying on config value
         arcaneCharge.addAttributeModifier(
-                EntityAttributes_SpellPower.POWER.get(MagicSchool.ARCANE),
+                SpellSchools.ARCANE.attribute,
                 "052f3166-8a80-11ed-a1eb-0242ac120002",
                 WizardsMod.effectsConfig.value.arcane_charge_damage_per_stack,
                 EntityAttributeModifier.Operation.MULTIPLY_TOTAL);

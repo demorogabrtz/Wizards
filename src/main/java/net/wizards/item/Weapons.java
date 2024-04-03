@@ -10,8 +10,7 @@ import net.minecraft.util.Identifier;
 import net.spell_engine.api.item.ItemConfig;
 import net.spell_engine.api.item.weapon.StaffItem;
 import net.spell_engine.api.item.weapon.Weapon;
-import net.spell_power.api.MagicSchool;
-import net.spell_power.api.attributes.SpellAttributes;
+import net.spell_power.api.SpellSchools;
 import net.wizards.WizardsMod;
 
 import java.util.ArrayList;
@@ -58,26 +57,26 @@ public class Weapons {
 
     public static final Weapon.Entry noviceWand = wand("wand_novice",
             Weapon.CustomMaterial.matching(ToolMaterials.WOOD, () -> Ingredient.ofItems(Items.STICK)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.FIRE), 1));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.FIRE.id, 1));
     public static final Weapon.Entry arcaneWand = wand("wand_arcane",
             Weapon.CustomMaterial.matching(ToolMaterials.IRON, () -> Ingredient.ofItems(Items.GOLD_INGOT)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.ARCANE), 2));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.ARCANE.id, 2));
     public static final Weapon.Entry fireWand = wand("wand_fire",
             Weapon.CustomMaterial.matching(ToolMaterials.IRON, () -> Ingredient.ofItems(Items.GOLD_INGOT)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.FIRE), 2));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.FIRE.id, 2));
     public static final Weapon.Entry frostWand = wand("wand_frost",
             Weapon.CustomMaterial.matching(ToolMaterials.IRON, () -> Ingredient.ofItems(Items.IRON_INGOT)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.FROST), 2));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.FROST.id, 2));
 
     public static final Weapon.Entry netheriteArcaneWand = wand("wand_netherite_arcane",
             Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, () -> Ingredient.ofItems(Items.NETHERITE_INGOT)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.ARCANE), 3));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.ARCANE.id, 3));
     public static final Weapon.Entry netheriteFireWand = wand("wand_netherite_fire",
             Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, () -> Ingredient.ofItems(Items.NETHERITE_INGOT)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.FIRE), 3));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.FIRE.id, 3));
     public static final Weapon.Entry netheriteFrostWand = wand("wand_netherite_frost",
             Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, () -> Ingredient.ofItems(Items.NETHERITE_INGOT)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.FROST), 3));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.FROST.id, 3));
 
 
     // MARK: Staves
@@ -97,28 +96,28 @@ public class Weapons {
 
     public static final Weapon.Entry wizardStaff = staff("staff_wizard",
             Weapon.CustomMaterial.matching(ToolMaterials.IRON, () -> Ingredient.ofItems(Items.STICK)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.ARCANE), 3))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.FIRE), 3))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.FROST), 3));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.ARCANE.id, 3))
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.FIRE.id, 3))
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.FROST.id, 3));
     public static final Weapon.Entry arcaneStaff = staff("staff_arcane",
             Weapon.CustomMaterial.matching(ToolMaterials.DIAMOND, () -> Ingredient.ofItems(Items.GOLD_INGOT)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.ARCANE), 4));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.ARCANE.id, 4));
     public static final Weapon.Entry fireStaff = staff("staff_fire",
             Weapon.CustomMaterial.matching(ToolMaterials.DIAMOND, () -> Ingredient.ofItems(Items.GOLD_INGOT)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.FIRE), 4));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.FIRE.id, 4));
     public static final Weapon.Entry frostStaff = staff("staff_frost",
             Weapon.CustomMaterial.matching(ToolMaterials.DIAMOND, () -> Ingredient.ofItems(Items.IRON_INGOT)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.FROST), 4));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.FROST.id, 4));
 
     public static final Weapon.Entry netheriteArcaneStaff = staff("staff_netherite_arcane",
             Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, () -> Ingredient.ofItems(Items.NETHERITE_INGOT)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.ARCANE), 5));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.ARCANE.id, 5));
     public static final Weapon.Entry netheriteFireStaff = staff("staff_netherite_fire",
             Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, () -> Ingredient.ofItems(Items.NETHERITE_INGOT)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.FIRE), 5));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.FIRE.id, 5));
     public static final Weapon.Entry netheriteFrostStaff = staff("staff_netherite_frost",
             Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, () -> Ingredient.ofItems(Items.NETHERITE_INGOT)))
-            .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.FROST), 5));
+            .attribute(ItemConfig.Attribute.bonus(SpellSchools.FROST.id, 5));
 
     // MARK: Register
 
@@ -126,15 +125,15 @@ public class Weapons {
         if (FabricLoader.getInstance().isModLoaded("betternether")) {
             staff("betternether", "staff_ruby_fire",
                     Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, ingredient("betternether:nether_ruby")))
-                    .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.FIRE), 6));
+                    .attribute(ItemConfig.Attribute.bonus(SpellSchools.FIRE.id, 6));
         }
         if (FabricLoader.getInstance().isModLoaded("betterend")) {
             staff("betterend", "staff_crystal_arcane",
                     Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, ingredient("betterend:aeternium_ingot")))
-                    .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.ARCANE), 6));
+                    .attribute(ItemConfig.Attribute.bonus(SpellSchools.ARCANE.id, 6));
             staff("betterend", "staff_smaragdant_frost",
                     Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, ingredient("betterend:aeternium_ingot")))
-                    .attribute(ItemConfig.Attribute.bonus(SpellAttributes.POWER.get(MagicSchool.FROST), 6));
+                    .attribute(ItemConfig.Attribute.bonus(SpellSchools.FROST.id, 6));
         }
 
         Weapon.register(configs, entries, Group.KEY);
