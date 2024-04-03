@@ -1,6 +1,7 @@
 # 1.2.0
 
 - Migrate to new Spell Power Attributes API
+- Rebalance secondary bonuses on specialized robes (swap Arcane-CritDmg and Frost-Haste)
 - Update Italian translation, thanks to @Zano1999
 
 # 1.1.1

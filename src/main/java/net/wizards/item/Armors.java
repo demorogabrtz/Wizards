@@ -87,22 +87,22 @@ public class Armors {
                             new ItemConfig.ArmorSet.Piece(1)
                                     .addAll(List.of(
                                             ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, specializedRobeSpellPower),
-                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, specializedRobeCritDamage)
+                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, specializedRobeHaste)
                                     )),
                             new ItemConfig.ArmorSet.Piece(3)
                                     .addAll(List.of(
                                             ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, specializedRobeSpellPower),
-                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, specializedRobeCritDamage)
+                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, specializedRobeHaste)
                                     )),
                             new ItemConfig.ArmorSet.Piece(2)
                                     .addAll(List.of(
                                             ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, specializedRobeSpellPower),
-                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, specializedRobeCritDamage)
+                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, specializedRobeHaste)
                                     )),
                             new ItemConfig.ArmorSet.Piece(1)
                                     .addAll(List.of(
                                             ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, specializedRobeSpellPower),
-                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, specializedRobeCritDamage)
+                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, specializedRobeHaste)
                                     ))
                     ))
                     .bundle(material -> new Armor.Set(WizardsMod.ID,
@@ -167,22 +167,22 @@ public class Armors {
                             new ItemConfig.ArmorSet.Piece(1)
                                     .addAll(List.of(
                                             ItemConfig.Attribute.multiply(SpellSchools.FROST.id, specializedRobeSpellPower),
-                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, specializedRobeHaste)
+                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, specializedRobeCritDamage)
                                     )),
                             new ItemConfig.ArmorSet.Piece(3)
                                     .addAll(List.of(
                                             ItemConfig.Attribute.multiply(SpellSchools.FROST.id, specializedRobeSpellPower),
-                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, specializedRobeHaste)
+                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, specializedRobeCritDamage)
                                     )),
                             new ItemConfig.ArmorSet.Piece(2)
                                     .addAll(List.of(
                                             ItemConfig.Attribute.multiply(SpellSchools.FROST.id, specializedRobeSpellPower),
-                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, specializedRobeHaste)
+                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, specializedRobeCritDamage)
                                     )),
                             new ItemConfig.ArmorSet.Piece(1)
                                     .addAll(List.of(
                                             ItemConfig.Attribute.multiply(SpellSchools.FROST.id, specializedRobeSpellPower),
-                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, specializedRobeHaste)
+                                            ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, specializedRobeCritDamage)
                                     ))
                     ))
                     .bundle(material -> new Armor.Set(WizardsMod.ID,
