@@ -46,7 +46,7 @@ dependencies {
     modImplementation("maven.modrinth:spell-power:${project.spell_power_version}-fabric")
     modImplementation("maven.modrinth:runes:${project.runes_version}-fabric")
 //    modImplementation(files("run/mods/dev/spell_engine-${project.spell_engine_version}.jar"))
-//    modImplementation(files("run/mods/dev/spell_power-fabric-${project.spell_power_version}.jar"))
+//    modImplementation(files("run/mods/dev/spell_power-${project.spell_power_version}.jar"))
 //    modImplementation(files("run/mods/dev/runes-fabric-${project.runes_version}.jar"))
 }
 

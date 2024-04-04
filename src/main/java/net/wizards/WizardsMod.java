@@ -19,7 +19,7 @@ public class WizardsMod {
     public static final String ID = "wizards";
 
     public static ConfigManager<ItemConfig> itemConfig = new ConfigManager<ItemConfig>
-            ("items_v3", Default.itemConfig)
+            ("items_v4", Default.itemConfig)
             .builder()
             .setDirectory(ID)
             .sanitize(true)
