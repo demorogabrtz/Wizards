@@ -2,6 +2,7 @@
 
 - Migrate to new Spell Power Attributes API
 - Rebalance secondary bonuses on specialized robes (swap Arcane-CritDmg and Frost-Haste)
+- Reduce cooldown of Frost Nova
 - Update `#wizards:wizard_robes` tag
 - Update Italian translation, thanks to @Zano1999
 
