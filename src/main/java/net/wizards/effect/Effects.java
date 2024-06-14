@@ -40,7 +40,7 @@ public class Effects {
         arcaneCharge.addAttributeModifier(
                 SpellSchools.ARCANE.attribute,
                 "052f3166-8a80-11ed-a1eb-0242ac120002",
-                WizardsMod.effectsConfig.value.arcane_charge_damage_per_stack,
+                WizardsMod.tweaksConfig.value.arcane_charge_damage_per_stack,
                 EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
 
         RemoveOnHit.configure(frozen, true);

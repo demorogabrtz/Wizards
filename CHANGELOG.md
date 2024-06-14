@@ -1,6 +1,7 @@
 # 1.2.1
 
 - Update Fabric Loader to 15+ for embedded MixinExtras
+- Configurable item registration
 
 # 1.2.0
 

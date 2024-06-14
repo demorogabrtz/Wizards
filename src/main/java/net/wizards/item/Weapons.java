@@ -32,18 +32,23 @@ public class Weapons {
         return entry;
     }
 
-    private static Supplier<Ingredient> ingredient(String idString) {
-        return ingredient(idString, Items.DIAMOND);
+    private static Supplier<Ingredient> ingredient(String idString, boolean requirement, Item fallback) {
+        var id = new Identifier(idString);
+        if (requirement) {
+            return () -> {
+                return Ingredient.ofItems(fallback);
+            };
+        } else {
+            return () -> {
+                var item = Registries.ITEM.get(id);
+                var ingredient = item != null ? item : fallback;
+                return Ingredient.ofItems(ingredient);
+            };
+        }
     }
 
-    private static Supplier<Ingredient> ingredient(String idString, Item fallback) {
-        var id = new Identifier(idString);
-        return () -> { 
-            var item = Registries.ITEM.get(id);
-            var ingredient = item != null ? item : fallback;
-            return Ingredient.ofItems(ingredient); 
-        };
-    }
+    private static final String BETTER_END = "betterend";
+    private static final String BETTER_NETHER = "betternether";
 
     // MARK: Wands
 
@@ -122,17 +127,19 @@ public class Weapons {
     // MARK: Register
 
     public static void register(Map<String, ItemConfig.Weapon> configs) {
-        if (FabricLoader.getInstance().isModLoaded("betternether")) {
-            staff("betternether", "staff_ruby_fire",
-                    Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, ingredient("betternether:nether_ruby")))
+        if (WizardsMod.tweaksConfig.value.ignore_items_required_mods || FabricLoader.getInstance().isModLoaded(BETTER_NETHER)) {
+            var repair = ingredient("betternether:nether_ruby", FabricLoader.getInstance().isModLoaded(BETTER_NETHER), Items.NETHERITE_INGOT);
+            staff("staff_ruby_fire",
+                    Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, repair))
                     .attribute(ItemConfig.Attribute.bonus(SpellSchools.FIRE.id, 6));
         }
-        if (FabricLoader.getInstance().isModLoaded("betterend")) {
-            staff("betterend", "staff_crystal_arcane",
-                    Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, ingredient("betterend:aeternium_ingot")))
+        if (WizardsMod.tweaksConfig.value.ignore_items_required_mods || FabricLoader.getInstance().isModLoaded(BETTER_END)) {
+            var repair = ingredient("betterend:aeternium_ingot", FabricLoader.getInstance().isModLoaded(BETTER_END), Items.NETHERITE_INGOT);
+            staff("staff_crystal_arcane",
+                    Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, repair))
                     .attribute(ItemConfig.Attribute.bonus(SpellSchools.ARCANE.id, 6));
-            staff("betterend", "staff_smaragdant_frost",
-                    Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, ingredient("betterend:aeternium_ingot")))
+            staff("staff_smaragdant_frost",
+                    Weapon.CustomMaterial.matching(ToolMaterials.NETHERITE, repair))
                     .attribute(ItemConfig.Attribute.bonus(SpellSchools.FROST.id, 6));
         }
 
