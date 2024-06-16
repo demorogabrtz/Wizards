@@ -1,8 +1,9 @@
 # 1.2.1
 
-- Update Fabric Loader to 15+ for embedded MixinExtras
 - Configurable item registration
 - Reduce damage done by Wall of Fire by 20%
+- Add French translation, thanks to valentin56610
+- Update Fabric Loader to 15+ for embedded MixinExtras
 
 # 1.2.0
 
