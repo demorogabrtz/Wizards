@@ -4,10 +4,10 @@
       "item": "wizards:fire_spell_book"
     },
     "title": {
-      "translate": "advancements.rpg_series.path_wizard_fire.title"
+      "translate": "advancements.rpg_series.path_choose_fire.title"
     },
     "description": {
-      "translate": "advancements.rpg_series.path_wizard_fire.description"
+      "translate": "advancements.rpg_series.path_choose_fire.description"
     },
     "frame": "task",
     "show_toast": true,
