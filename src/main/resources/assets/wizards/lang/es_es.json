@@ -75,22 +75,22 @@
   "effect.wizards.frost_shield": "Escudo de Escarcha",
   "effect.wizards.frost_shield.description": "Bloquea los ataques entrantes mientras está activo, pero reduce la velocidad de movimiento"
 
-  "advancements.rpg_classes.obtain_wizard_robes.title": "Un Mago Nunca Llega Tarde",
-  "advancements.rpg_classes.obtain_wizard_robes.description": "Adquiere un conjunto completo de Túnicas de Mago",
-  "advancements.rpg_classes.obtain_wand.title": "La Varita Elige al Mago",
-  "advancements.rpg_classes.obtain_wand.description": "Obtén una Varita",
-  "advancements.rpg_classes.obtain_arcane_rune.title": "Sendero Arcano",
-  "advancements.rpg_classes.obtain_arcane_rune.description": "Obtén una Runa Arcana",
-  "advancements.rpg_classes.obtain_fire_rune.title": "Sendero de Fuego",
-  "advancements.rpg_classes.obtain_fire_rune.description": "Obtén una Runa de Fuego",
-  "advancements.rpg_classes.obtain_frost_rune.title": "Sendero de Escarcha",
-  "advancements.rpg_classes.obtain_frost_rune.description": "Obtén una Runa de Escarcha",
-  "advancements.rpg_classes.arcane_mastery.title": "Flujos Arcanos",
-  "advancements.rpg_classes.arcane_mastery.description": "Obtén todos los Hechizos de Mago Arcanos",
-  "advancements.rpg_classes.fire_mastery.title": "Piromaniaco",
-  "advancements.rpg_classes.fire_mastery.description": "Obtén todos los Hechizos de Mago de Fuego",
-  "advancements.rpg_classes.frost_mastery.title": "Venas Heladas",
-  "advancements.rpg_classes.frost_mastery.description": "Obtén todos los Hechizos de Mago de Escarcha"
+  "advancements.rpg_series.obtain_wizard_robes.title": "Un Mago Nunca Llega Tarde",
+  "advancements.rpg_series.obtain_wizard_robes.description": "Adquiere un conjunto completo de Túnicas de Mago",
+  "advancements.rpg_series.obtain_wand.title": "La Varita Elige al Mago",
+  "advancements.rpg_series.obtain_wand.description": "Obtén una Varita",
+  "advancements.rpg_series.obtain_arcane_rune.title": "Sendero Arcano",
+  "advancements.rpg_series.obtain_arcane_rune.description": "Obtén una Runa Arcana",
+  "advancements.rpg_series.obtain_fire_rune.title": "Sendero de Fuego",
+  "advancements.rpg_series.obtain_fire_rune.description": "Obtén una Runa de Fuego",
+  "advancements.rpg_series.obtain_frost_rune.title": "Sendero de Escarcha",
+  "advancements.rpg_series.obtain_frost_rune.description": "Obtén una Runa de Escarcha",
+  "advancements.rpg_series.spell_master_arcane.title": "Flujos Arcanos",
+  "advancements.rpg_series.spell_master_arcane.description": "Obtén todos los Hechizos de Mago Arcanos",
+  "advancements.rpg_series.spell_master_fire.title": "Piromaniaco",
+  "advancements.rpg_series.spell_master_fire.description": "Obtén todos los Hechizos de Mago de Fuego",
+  "advancements.rpg_series.spell_master_frost.title": "Venas Heladas",
+  "advancements.rpg_series.spell_master_frost.description": "Obtén todos los Hechizos de Mago de Escarcha"
 
   "entity.minecraft.villager.wizard_merchant": "Comerciante de Magos",
   "entity.minecraft.villager.wizards:wizard_merchant": "Comerciante de Magos"
