@@ -1,3 +1,7 @@
+# 1.2.2
+
+- Add enchantment condition tags
+
 # 1.2.1
 
 - Configurable item registration
