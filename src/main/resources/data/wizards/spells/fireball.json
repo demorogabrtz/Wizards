@@ -29,14 +29,26 @@
       "projectile": {
         "projectile": {
           "homing_angle": 1.0,
+          "launch_properties": {
+            "velocity": 1.5
+          },
           "client_data": {
             "travel_particles": [
               {
-                "particle_id": "spell_engine:flame",
+                "particle_id": "spell_engine:flame_spark",
                 "shape": "CIRCLE",
                 "rotation": "LOOK",
                 "origin": "CENTER",
                 "count": 4.0,
+                "min_speed": 0.0,
+                "max_speed": 0.1
+              },
+              {
+                "particle_id": "spell_engine:flame_medium_b",
+                "shape": "CIRCLE",
+                "rotation": "LOOK",
+                "origin": "CENTER",
+                "count": 3.0,
                 "min_speed": 0.0,
                 "max_speed": 0.1
               },

@@ -29,6 +29,9 @@
       "projectile": {
         "projectile": {
           "homing_angle": 2.0,
+          "launch_properties": {
+            "velocity": 1.5
+          },
           "perks": {
             "ricochet": 2,
             "bounce": 2

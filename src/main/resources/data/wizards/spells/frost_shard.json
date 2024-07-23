@@ -28,7 +28,7 @@
       "type": "PROJECTILE",
       "projectile": {
         "launch_properties": {
-          "velocity": 1.5
+          "velocity": 1.2
         },
         "projectile": {
           "perks": {

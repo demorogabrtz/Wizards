@@ -1,3 +1,7 @@
+# 1.3.0
+
+- Increased velocity for tier 1 projectile spells
+
 # 1.2.2
 
 - Add enchantment condition tags
