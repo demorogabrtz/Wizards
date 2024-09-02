@@ -50,9 +50,9 @@ public class Effects {
         Synchronized.configure(arcaneCharge, true);
 
         int rawId = 720;
-        Registry.register(Registries.STATUS_EFFECT, rawId++, new Identifier(WizardsMod.ID, "frozen").toString(), frozen);
-        Registry.register(Registries.STATUS_EFFECT, rawId++, new Identifier(WizardsMod.ID, "frost_shield").toString(), frostShield);
-        Registry.register(Registries.STATUS_EFFECT, rawId++, new Identifier(WizardsMod.ID, "frost_slowness").toString(), frostSlowness);
-        Registry.register(Registries.STATUS_EFFECT, rawId++, new Identifier(WizardsMod.ID, "arcane_charge").toString(), arcaneCharge);
+        Registry.register(Registries.STATUS_EFFECT, rawId++, Identifier.of(WizardsMod.ID, "frozen").toString(), frozen);
+        Registry.register(Registries.STATUS_EFFECT, rawId++, Identifier.of(WizardsMod.ID, "frost_shield").toString(), frostShield);
+        Registry.register(Registries.STATUS_EFFECT, rawId++, Identifier.of(WizardsMod.ID, "frost_slowness").toString(), frostSlowness);
+        Registry.register(Registries.STATUS_EFFECT, rawId++, Identifier.of(WizardsMod.ID, "arcane_charge").toString(), arcaneCharge);
     }
 }

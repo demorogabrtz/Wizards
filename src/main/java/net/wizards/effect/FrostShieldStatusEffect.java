@@ -11,6 +11,6 @@ public class FrostShieldStatusEffect extends StatusEffect {
         super(category, color);
     }
 
-    public static final Identifier soundId = new Identifier(WizardsMod.ID, "frost_shield_impact");
+    public static final Identifier soundId = Identifier.of(WizardsMod.ID, "frost_shield_impact");
     public static final SoundEvent sound = SoundEvent.of(soundId);
 }

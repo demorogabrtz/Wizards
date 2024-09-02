@@ -28,13 +28,13 @@ public class WizardVillagers {
     public static final String WIZARD_MERCHANT = "wizard_merchant";
 
     public static PointOfInterestType registerPOI(String name, Block block) {
-        return PointOfInterestHelper.register(new Identifier(WizardsMod.ID, name),
+        return PointOfInterestHelper.register(Identifier.of(WizardsMod.ID, name),
                 1, 10, ImmutableSet.copyOf(block.getStateManager().getStates()));
     }
 
     public static VillagerProfession registerProfession(String name, RegistryKey<PointOfInterestType> workStation) {
-        var id = new Identifier(WizardsMod.ID, name);
-        return Registry.register(Registries.VILLAGER_PROFESSION, new Identifier(WizardsMod.ID, name), new VillagerProfession(
+        var id = Identifier.of(WizardsMod.ID, name);
+        return Registry.register(Registries.VILLAGER_PROFESSION, Identifier.of(WizardsMod.ID, name), new VillagerProfession(
                 id.toString(),
                 (entry) -> {
                     return entry.matchesKey(workStation);
@@ -79,7 +79,7 @@ public class WizardVillagers {
         var poi = registerPOI(WIZARD_MERCHANT, RuneCraftingBlock.INSTANCE);
         var profession = registerProfession(
                 WIZARD_MERCHANT,
-                RegistryKey.of(Registries.POINT_OF_INTEREST_TYPE.getKey(), new Identifier(WizardsMod.ID, WIZARD_MERCHANT)));
+                RegistryKey.of(Registries.POINT_OF_INTEREST_TYPE.getKey(), Identifier.of(WizardsMod.ID, WIZARD_MERCHANT)));
         List<Offer> wizardMerchantOffers = List.of(
                 Offer.sell(1, new ItemStack(RuneItems.get(RuneItems.RuneType.ARCANE), 8), 2, 128, 1, 0.01f),
                 Offer.sell(1, new ItemStack(RuneItems.get(RuneItems.RuneType.FIRE), 8), 2, 128, 1, 0.01f),

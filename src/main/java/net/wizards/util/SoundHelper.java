@@ -50,7 +50,7 @@ public class SoundHelper {
 
     public static void registerSounds() {
         for (var soundKey: soundKeys) {
-            var soundId = new Identifier(WizardsMod.ID, soundKey);
+            var soundId = Identifier.of(WizardsMod.ID, soundKey);
             var customTravelDistance = soundDistances.get(soundKey);
             var soundEvent = (customTravelDistance == null)
                     ? SoundEvent.of(soundId)

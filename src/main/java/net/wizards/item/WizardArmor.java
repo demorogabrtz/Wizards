@@ -26,7 +26,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class WizardArmor extends ArmorItem implements GeoItem, ConfigurableAttributes {
-    public static final Identifier equipSoundId = new Identifier(WizardsMod.ID, "wizard_robes_equip");
+    public static final Identifier equipSoundId = Identifier.of(WizardsMod.ID, "wizard_robes_equip");
     public static final SoundEvent equipSound = SoundEvent.of(equipSoundId);
     public final Armor.CustomMaterial customMaterial;
 
