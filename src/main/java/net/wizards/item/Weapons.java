@@ -55,8 +55,7 @@ public class Weapons {
     private static final float wandAttackDamage = 2;
     private static final float wandAttackSpeed = -2.4F;
     private static Weapon.Entry wand(String name, Weapon.CustomMaterial material) {
-        var item = new StaffItem(material, settings);
-        return entry(name, material, item, new ItemConfig.Weapon(wandAttackDamage, wandAttackSpeed));
+        return entry(name, material, StaffItem::new, new ItemConfig.Weapon(wandAttackDamage, wandAttackSpeed));
     }
 
     public static final Weapon.Entry noviceWand = wand("wand_novice",
@@ -93,9 +92,7 @@ public class Weapons {
     }
 
     private static Weapon.Entry staff(String requiredMod, String name, Weapon.CustomMaterial material) {
-        var settings = new Item.Settings();
-        var item = new StaffItem(material, settings);
-        return entry(requiredMod, name, material, item, new ItemConfig.Weapon(staffAttackDamage, staffAttackSpeed));
+        return entry(requiredMod, name, material, StaffItem::new, new ItemConfig.Weapon(staffAttackDamage, staffAttackSpeed));
     }
 
     public static final Weapon.Entry wizardStaff = staff("staff_wizard",
