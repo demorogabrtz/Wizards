@@ -61,25 +61,25 @@ public class Armors {
             "wizard_robe",
             1, 3, 2, 1,
             9,
-            SoundHelper.wizard_robes_equip, WOOL_INGREDIENTS);
+            SoundHelper.wizard_robes_equip.entry(), WOOL_INGREDIENTS);
 
     public static RegistryEntry<ArmorMaterial> material_arcane = material(
             "arcane_robe",
             1, 3, 2, 1,
             10,
-            SoundHelper.wizard_robes_equip, WOOL_INGREDIENTS);
+            SoundHelper.wizard_robes_equip.entry(), WOOL_INGREDIENTS);
 
     public static RegistryEntry<ArmorMaterial> material_fire = material(
             "fire_robe",
             1, 3, 2, 1,
             10,
-            SoundHelper.wizard_robes_equip, WOOL_INGREDIENTS);
+            SoundHelper.wizard_robes_equip.entry(), WOOL_INGREDIENTS);
 
     public static RegistryEntry<ArmorMaterial> material_frost = material(
             "frost_robe",
             1, 3, 2, 1,
             10,
-            SoundHelper.wizard_robes_equip, WOOL_INGREDIENTS);
+            SoundHelper.wizard_robes_equip.entry(), WOOL_INGREDIENTS);
 
     public static final ArrayList<Armor.Entry> entries = new ArrayList<>();
     private static Armor.Entry create(RegistryEntry<ArmorMaterial> material, Identifier id, int durability, Armor.Set.ItemFactory factory, ItemConfig.ArmorSet defaults) {

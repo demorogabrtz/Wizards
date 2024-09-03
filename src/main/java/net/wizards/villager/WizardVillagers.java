@@ -21,7 +21,9 @@ import net.wizards.WizardsMod;
 import net.wizards.item.Armors;
 import net.wizards.item.Weapons;
 import net.wizards.item.WizardArmor;
+import net.wizards.util.SoundHelper;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class WizardVillagers {
@@ -32,21 +34,21 @@ public class WizardVillagers {
                 1, 10, ImmutableSet.copyOf(block.getStateManager().getStates()));
     }
 
-//    public static VillagerProfession registerProfession(String name, RegistryKey<PointOfInterestType> workStation) {
-//        var id = Identifier.of(WizardsMod.ID, name);
-//        return Registry.register(Registries.VILLAGER_PROFESSION, Identifier.of(WizardsMod.ID, name), new VillagerProfession(
-//                id.toString(),
-//                (entry) -> {
-//                    return entry.matchesKey(workStation);
-//                },
-//                (entry) -> {
-//                    return entry.matchesKey(workStation);
-//                },
-//                ImmutableSet.of(),
-//                ImmutableSet.of(),
-//                WizardArmor.equipSound)
-//        );
-//    }
+    public static VillagerProfession registerProfession(String name, RegistryKey<PointOfInterestType> workStation) {
+        var id = Identifier.of(WizardsMod.ID, name);
+        return Registry.register(Registries.VILLAGER_PROFESSION, Identifier.of(WizardsMod.ID, name), new VillagerProfession(
+                id.toString(),
+                (entry) -> {
+                    return entry.matchesKey(workStation);
+                },
+                (entry) -> {
+                    return entry.matchesKey(workStation);
+                },
+                ImmutableSet.of(),
+                ImmutableSet.of(),
+                SoundHelper.wizard_robes_equip.sound())
+        );
+    }
 
 //    private static class Offer {
 //        int level;
@@ -73,13 +75,13 @@ public class WizardVillagers {
 //            return new Offer(level, new ItemStack(Items.EMERALD, price), item, maxUses, experience, priceMultiplier);
 //        }
 //    }
-//
+
     public static void register() {
-//        StructurePoolAPI.injectAll(WizardsMod.villageConfig.value);
-//        var poi = registerPOI(WIZARD_MERCHANT, RuneCraftingBlock.INSTANCE);
-//        var profession = registerProfession(
-//                WIZARD_MERCHANT,
-//                RegistryKey.of(Registries.POINT_OF_INTEREST_TYPE.getKey(), Identifier.of(WizardsMod.ID, WIZARD_MERCHANT)));
+        StructurePoolAPI.injectAll(WizardsMod.villageConfig.value);
+        var poi = registerPOI(WIZARD_MERCHANT, RuneCraftingBlock.INSTANCE);
+        var profession = registerProfession(
+                WIZARD_MERCHANT,
+                RegistryKey.of(Registries.POINT_OF_INTEREST_TYPE.getKey(), Identifier.of(WizardsMod.ID, WIZARD_MERCHANT)));
 //        List<Offer> wizardMerchantOffers = List.of(
 //                Offer.sell(1, new ItemStack(RuneItems.get(RuneItems.RuneType.ARCANE), 8), 2, 128, 1, 0.01f),
 //                Offer.sell(1, new ItemStack(RuneItems.get(RuneItems.RuneType.FIRE), 8), 2, 128, 1, 0.01f),
@@ -96,38 +98,60 @@ public class WizardVillagers {
 //                Offer.sell(4, Armors.wizardRobeSet.chest.getDefaultStack(), 20, 12, 15, 0.05f),
 //                Offer.sell(4, Armors.wizardRobeSet.legs.getDefaultStack(), 20, 12, 15, 0.05f)
 //            );
-//
-//        for(var offer: wizardMerchantOffers) {
-//            TradeOfferHelper.registerVillagerOffers(profession, offer.level, factories -> {
-//                factories.add(((entity, random) -> new TradeOffer(
-//                        offer.input,
-//                        offer.output,
-//                        offer.maxUses, offer.experience, offer.priceMultiplier)
-//                ));
-//            });
-//        }
-//        TradeOfferHelper.registerVillagerOffers(profession, 5, factories -> {
-//            factories.add(((entity, random) -> new TradeOffers.SellEnchantedToolFactory(
-//                    Weapons.arcaneStaff.item(),
-//                    40,
-//                    3,
-//                    30,
-//                    0F).create(entity, random)
-//            ));
-//            factories.add(((entity, random) -> new TradeOffers.SellEnchantedToolFactory(
-//                    Weapons.fireStaff.item(),
-//                    40,
-//                    3,
-//                    30,
-//                    0F).create(entity, random)
-//            ));
-//            factories.add(((entity, random) -> new TradeOffers.SellEnchantedToolFactory(
-//                    Weapons.frostStaff.item(),
-//                    40,
-//                    3,
-//                    30,
-//                    0F).create(entity, random)
-//            ));
-//        });
+
+        LinkedHashMap<Integer, List<TradeOffers.Factory>> trades = new LinkedHashMap<>();
+        trades.put(1, List.of(
+                new TradeOffers.SellItemFactory(RuneItems.get(RuneItems.RuneType.ARCANE), 2, 8, 128, 1, 0.01f),
+                new TradeOffers.SellItemFactory(RuneItems.get(RuneItems.RuneType.FIRE), 2, 8, 128, 1, 0.01f),
+                new TradeOffers.SellItemFactory(RuneItems.get(RuneItems.RuneType.FROST), 2, 8, 128, 1, 0.01f)
+        ));
+        trades.put(2, List.of(
+                new TradeOffers.SellItemFactory(Weapons.wizardStaff.item(), 4, 1, 12, 8),
+                new TradeOffers.SellItemFactory(Weapons.noviceWand.item(), 4, 1, 12, 8),
+                new TradeOffers.SellItemFactory(Weapons.arcaneWand.item(), 18, 1, 12, 8),
+                new TradeOffers.SellItemFactory(Weapons.fireWand.item(), 18, 1, 12, 8),
+                new TradeOffers.SellItemFactory(Weapons.frostWand.item(), 18, 1, 12, 8),
+
+                new TradeOffers.BuyItemFactory(Items.WHITE_WOOL, 5, 12, 5, 8),
+                new TradeOffers.BuyItemFactory(Items.LAPIS_LAZULI, 6, 3, 5, 12)
+        ));
+        trades.put(3, List.of(
+                new TradeOffers.SellItemFactory(Armors.wizardRobeSet.head, 15, 1, 12, 13, 0.1F),
+                new TradeOffers.SellItemFactory(Armors.wizardRobeSet.feet, 15, 1, 12, 13, 0.1F)
+        ));
+        trades.put(4, List.of(
+                new TradeOffers.SellItemFactory(Armors.wizardRobeSet.chest, 20, 1, 12, 15, 0.1F),
+                new TradeOffers.SellItemFactory(Armors.wizardRobeSet.legs, 20, 1, 12, 15, 0.1F)
+        ));
+
+        for (var entry: trades.entrySet()) {
+            TradeOfferHelper.registerVillagerOffers(profession, entry.getKey(), factories -> {
+                factories.addAll(entry.getValue());
+            });
+        }
+
+        TradeOfferHelper.registerVillagerOffers(profession, 5, factories -> {
+            factories.add(((entity, random) -> new TradeOffers.SellEnchantedToolFactory(
+                    Weapons.arcaneStaff.item(),
+                    40,
+                    3,
+                    30,
+                    0F).create(entity, random)
+            ));
+            factories.add(((entity, random) -> new TradeOffers.SellEnchantedToolFactory(
+                    Weapons.fireStaff.item(),
+                    40,
+                    3,
+                    30,
+                    0F).create(entity, random)
+            ));
+            factories.add(((entity, random) -> new TradeOffers.SellEnchantedToolFactory(
+                    Weapons.frostStaff.item(),
+                    40,
+                    3,
+                    30,
+                    0F).create(entity, random)
+            ));
+        });
     }
 }

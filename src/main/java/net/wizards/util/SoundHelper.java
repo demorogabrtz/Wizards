@@ -49,11 +49,15 @@ public class SoundHelper {
             "fire_meteor_impact", Float.valueOf(48F)
     );
 
-    private static RegistryEntry<SoundEvent> registerSound(String key) {
+    public record Entry(Identifier id, SoundEvent sound, RegistryEntry<SoundEvent> entry) {}
+
+    private static Entry registerSound(String key) {
         var soundId = Identifier.of(WizardsMod.ID, key);
-        return Registry.registerReference(Registries.SOUND_EVENT, soundId, SoundEvent.of(soundId));
+        var event = SoundEvent.of(soundId);
+        var entry = Registry.registerReference(Registries.SOUND_EVENT, soundId, event);
+        return new Entry(soundId, event, entry);
     }
-    public static final RegistryEntry<SoundEvent> wizard_robes_equip = registerSound("wizard_robes_equip");
+    public static final Entry wizard_robes_equip = registerSound("wizard_robes_equip");
 
     public static void registerSounds() {
         for (var soundKey: soundKeys) {
