@@ -20,12 +20,12 @@ import java.util.function.Supplier;
 public class Weapons {
     public static final ArrayList<Weapon.Entry> entries = new ArrayList<>();
 
-    private static Weapon.Entry entry(String name, Weapon.CustomMaterial material, Item item, ItemConfig.Weapon defaults) {
-        return entry(null, name, material, item, defaults);
+    private static Weapon.Entry entry(String name, Weapon.CustomMaterial material, Weapon.Factory factory, ItemConfig.Weapon defaults) {
+        return entry(null, name, material, factory, defaults);
     }
 
-    private static Weapon.Entry entry(String requiredMod, String name, Weapon.CustomMaterial material, Item item, ItemConfig.Weapon defaults) {
-        var entry = new Weapon.Entry(WizardsMod.ID, name, material, item, defaults, null);
+    private static Weapon.Entry entry(String requiredMod, String name, Weapon.CustomMaterial material, Weapon.Factory factory, ItemConfig.Weapon defaults) {
+        var entry = new Weapon.Entry(WizardsMod.ID, name, material, factory, defaults, null);
         if (entry.isRequiredModInstalled()) {
             entries.add(entry);
         }
@@ -55,7 +55,6 @@ public class Weapons {
     private static final float wandAttackDamage = 2;
     private static final float wandAttackSpeed = -2.4F;
     private static Weapon.Entry wand(String name, Weapon.CustomMaterial material) {
-        var settings = new Item.Settings();
         var item = new StaffItem(material, settings);
         return entry(name, material, item, new ItemConfig.Weapon(wandAttackDamage, wandAttackSpeed));
     }

@@ -6,6 +6,7 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.spell_engine.api.effect.RemoveOnHit;
 import net.spell_engine.api.effect.Synchronized;
@@ -13,46 +14,71 @@ import net.spell_power.api.SpellPower;
 import net.spell_power.api.SpellSchools;
 import net.wizards.WizardsMod;
 
+import java.util.ArrayList;
+
 public class Effects {
-    public static StatusEffect frozen = new FrozenStatusEffect(StatusEffectCategory.HARMFUL, 0x99ccff)
+    private static ArrayList<Entry> entries = new ArrayList<>();
+    public static class Entry {
+        public final Identifier id;
+        public final StatusEffect effect;
+        public RegistryEntry<StatusEffect> registryEntry;
+
+        public Entry(String name, StatusEffect effect) {
+            this.id = Identifier.of(WizardsMod.ID, name);
+            this.effect = effect;
+            entries.add(this);
+        }
+
+        public void register() {
+            registryEntry = Registry.registerReference(Registries.STATUS_EFFECT, id, effect);
+        }
+    }
+
+    public static Entry frozen = new Entry("frozen",
+            new FrozenStatusEffect(StatusEffectCategory.HARMFUL, 0x99ccff)
             .setVulnerability(SpellSchools.FROST, new SpellPower.Vulnerability(0, 1F, 0F))
             .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
-                    "052f3166-8ae7-11ed-a1eb-0242ac120002",
+                    Identifier.of(WizardsMod.ID, "effect.frozen"),
                     -1F,
-                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                    EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+    );
 
-    public static StatusEffect frostShield = new FrostShieldStatusEffect(StatusEffectCategory.BENEFICIAL, 0x99ccff)
+    public static Entry frostShield = new Entry("frost_shield",
+            new FrostShieldStatusEffect(StatusEffectCategory.BENEFICIAL, 0x99ccff)
             .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
-                    "0563d59a-8c60-11ed-a1eb-0242ac120002",
+                    Identifier.of(WizardsMod.ID, "effect.frost_shield"),
                     -0.5F,
-                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                    EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+    );
 
-    public static StatusEffect frostSlowness = new FrozenStatusEffect(StatusEffectCategory.HARMFUL, 0x99ccff)
+    public static Entry frostSlowness = new Entry("frost_slowness",
+            new FrozenStatusEffect(StatusEffectCategory.HARMFUL, 0x99ccff)
             .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
-                    "052f3166-8a43-11ed-a1eb-0242ac120002",
+                    Identifier.of(WizardsMod.ID, "effect.frost_slowness"),
                     -0.15,
-                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                    EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+    );
 
-    public static StatusEffect arcaneCharge = new CustomStatusEffect(StatusEffectCategory.BENEFICIAL, 0xff4bdd);
+    public static Entry arcaneCharge = new Entry("arcane_charge",
+            new CustomStatusEffect(StatusEffectCategory.BENEFICIAL, 0xff4bdd)
+    );
 
     public static void register() {
         /// Adding attribute modifier here due to relying on config value
-        arcaneCharge.addAttributeModifier(
-                SpellSchools.ARCANE.attribute,
-                "052f3166-8a80-11ed-a1eb-0242ac120002",
+        arcaneCharge.effect.addAttributeModifier(
+                SpellSchools.ARCANE.attributeEntry,
+                Identifier.of(WizardsMod.ID, "effect.arcane_charge"),
                 WizardsMod.tweaksConfig.value.arcane_charge_damage_per_stack,
-                EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
+                EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
 
-        RemoveOnHit.configure(frozen, true);
-        Synchronized.configure(frostSlowness, true);
-        Synchronized.configure(frozen, true);
-        Synchronized.configure(frostShield, true);
-        Synchronized.configure(arcaneCharge, true);
+        RemoveOnHit.configure(frozen.effect, true);
+        Synchronized.configure(frostSlowness.effect, true);
+        Synchronized.configure(frozen.effect, true);
+        Synchronized.configure(frostShield.effect, true);
+        Synchronized.configure(arcaneCharge.effect, true);
 
-        int rawId = 720;
-        Registry.register(Registries.STATUS_EFFECT, rawId++, Identifier.of(WizardsMod.ID, "frozen").toString(), frozen);
-        Registry.register(Registries.STATUS_EFFECT, rawId++, Identifier.of(WizardsMod.ID, "frost_shield").toString(), frostShield);
-        Registry.register(Registries.STATUS_EFFECT, rawId++, Identifier.of(WizardsMod.ID, "frost_slowness").toString(), frostSlowness);
-        Registry.register(Registries.STATUS_EFFECT, rawId++, Identifier.of(WizardsMod.ID, "arcane_charge").toString(), arcaneCharge);
+        for (var entry: entries) {
+            entry.register();
+        }
     }
 }

@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
@@ -48,6 +49,12 @@ public class SoundHelper {
             "fire_meteor_impact", Float.valueOf(48F)
     );
 
+    private static RegistryEntry<SoundEvent> registerSound(String key) {
+        var soundId = Identifier.of(WizardsMod.ID, key);
+        return Registry.registerReference(Registries.SOUND_EVENT, soundId, SoundEvent.of(soundId));
+    }
+    public static final RegistryEntry<SoundEvent> wizard_robes_equip = registerSound("wizard_robes_equip");
+
     public static void registerSounds() {
         for (var soundKey: soundKeys) {
             var soundId = Identifier.of(WizardsMod.ID, soundKey);
@@ -59,7 +66,6 @@ public class SoundHelper {
         }
 
         Registry.register(Registries.SOUND_EVENT, FrostShieldStatusEffect.soundId, FrostShieldStatusEffect.sound);
-        Registry.register(Registries.SOUND_EVENT, WizardArmor.equipSoundId, WizardArmor.equipSound);
     }
 
     public static void playSoundEvent(World world, Entity entity, SoundEvent soundEvent) {

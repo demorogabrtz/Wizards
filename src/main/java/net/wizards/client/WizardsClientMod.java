@@ -27,10 +27,10 @@ public class WizardsClientMod {
                 FrostShieldRenderer.modelId_overlay
         ));
 
-        CustomModelStatusEffect.register(Effects.arcaneCharge, new ArcaneChargeRenderer());
-        CustomParticleStatusEffect.register(Effects.frostSlowness, new FrozenParticles(1));
-        CustomParticleStatusEffect.register(Effects.frozen, new FrozenParticles(2));
-        CustomModelStatusEffect.register(Effects.frozen, new FrozenRenderer());
-        CustomModelStatusEffect.register(Effects.frostShield, new FrostShieldRenderer());
+        CustomModelStatusEffect.register(Effects.arcaneCharge.effect, new ArcaneChargeRenderer());
+        CustomParticleStatusEffect.register(Effects.frostSlowness.effect, new FrozenParticles(1));
+        CustomParticleStatusEffect.register(Effects.frozen.effect, new FrozenParticles(2));
+        CustomModelStatusEffect.register(Effects.frozen.effect, new FrozenRenderer());
+        CustomModelStatusEffect.register(Effects.frostShield.effect, new FrostShieldRenderer());
     }
 }
