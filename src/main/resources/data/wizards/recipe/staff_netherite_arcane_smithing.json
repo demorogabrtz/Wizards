@@ -7,7 +7,7 @@
     "item": "wizards:staff_arcane"
   },
   "result": {
-    "item": "wizards:staff_netherite_arcane"
+    "id": "wizards:staff_netherite_arcane"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

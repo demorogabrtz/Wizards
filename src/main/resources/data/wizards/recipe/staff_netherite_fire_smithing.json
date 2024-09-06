@@ -7,7 +7,7 @@
     "item": "wizards:staff_fire"
   },
   "result": {
-    "item": "wizards:staff_netherite_fire"
+    "id": "wizards:staff_netherite_fire"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

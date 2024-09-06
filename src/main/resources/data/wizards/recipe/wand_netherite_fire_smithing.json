@@ -7,7 +7,7 @@
     "item": "wizards:wand_fire"
   },
   "result": {
-    "item": "wizards:wand_netherite_fire"
+    "id": "wizards:wand_netherite_fire"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

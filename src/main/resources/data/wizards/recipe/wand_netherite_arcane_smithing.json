@@ -7,7 +7,7 @@
     "item": "wizards:wand_arcane"
   },
   "result": {
-    "item": "wizards:wand_netherite_arcane"
+    "id": "wizards:wand_netherite_arcane"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"
