@@ -1,13 +1,13 @@
 {
   "display": {
     "icon": {
-      "item": "wizards:frost_spell_book"
+      "id": "wizards:arcane_spell_book"
     },
     "title": {
-      "translate": "advancements.rpg_series.path_choose_frost.title"
+      "translate": "advancements.rpg_series.path_choose_arcane.title"
     },
     "description": {
-      "translate": "advancements.rpg_series.path_choose_frost.description"
+      "translate": "advancements.rpg_series.path_choose_arcane.description"
     },
     "frame": "task",
     "show_toast": true,
@@ -19,7 +19,7 @@
     "book": {
       "trigger": "spell_engine:spell_book_creation",
       "conditions": {
-        "spell_pool": "wizards:frost"
+        "spell_pool": "wizards:arcane"
       }
     }
   },

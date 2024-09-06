@@ -141,33 +141,35 @@ public class Armors {
                                     ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, specializedRobeSpellPower),
                                     ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, specializedRobeHaste)
                             ))
-            )).armorSet();
+            ))
+            .armorSet();
 
     public static final Armor.Set fireRobeSet = create(
             material_fire,
             Identifier.of(WizardsMod.ID, "fire_robe"),
             20,
-            WizardArmor::new,                    ItemConfig.ArmorSet.with(
-            new ItemConfig.ArmorSet.Piece(1)
-                    .addAll(List.of(
-                            ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, specializedRobeSpellPower),
-                            ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, specializedRobeCritChance)
-                    )),
-            new ItemConfig.ArmorSet.Piece(3)
-                    .addAll(List.of(
-                            ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, specializedRobeSpellPower),
-                            ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, specializedRobeCritChance)
-                    )),
-            new ItemConfig.ArmorSet.Piece(2)
-                    .addAll(List.of(
-                            ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, specializedRobeSpellPower),
-                            ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, specializedRobeCritChance)
-                    )),
-            new ItemConfig.ArmorSet.Piece(1)
-                    .addAll(List.of(
-                            ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, specializedRobeSpellPower),
-                            ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, specializedRobeCritChance)
-                    ))
+            WizardArmor::new,
+            ItemConfig.ArmorSet.with(
+                    new ItemConfig.ArmorSet.Piece(1)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, specializedRobeSpellPower),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, specializedRobeCritChance)
+                            )),
+                    new ItemConfig.ArmorSet.Piece(3)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, specializedRobeSpellPower),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, specializedRobeCritChance)
+                            )),
+                    new ItemConfig.ArmorSet.Piece(2)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, specializedRobeSpellPower),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, specializedRobeCritChance)
+                            )),
+                    new ItemConfig.ArmorSet.Piece(1)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, specializedRobeSpellPower),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, specializedRobeCritChance)
+                            ))
             ))
             .armorSet();
 
@@ -197,7 +199,8 @@ public class Armors {
                                     ItemConfig.Attribute.multiply(SpellSchools.FROST.id, specializedRobeSpellPower),
                                     ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, specializedRobeCritDamage)
                             ))
-            )).armorSet();
+            ))
+            .armorSet();
 
     public static void register(Map<String, ItemConfig.ArmorSet> configs) {
         Armor.register(configs, entries, Group.KEY);

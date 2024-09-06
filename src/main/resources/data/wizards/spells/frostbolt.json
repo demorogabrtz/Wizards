@@ -1,12 +1,13 @@
 {
   "school": "FROST",
   "group": "primary",
+  "rank": 2,
   "range": 64,
   "learn": {
     "tier": 1
   },
   "cast": {
-    "duration": 1.2,
+    "duration": 1.1,
     "animation": "spell_engine:one_handed_projectile_charge",
     "sound": {
       "id": "spell_engine:generic_frost_casting",
@@ -27,11 +28,12 @@
     "target": {
       "type": "PROJECTILE",
       "projectile": {
+        "launch_properties": {
+          "velocity": 1.2,
+          "sound": { "id": "spell_engine:generic_frost_release" }
+        },
         "projectile": {
           "homing_angle": 2.0,
-          "launch_properties": {
-            "velocity": 1.5
-          },
           "perks": {
             "ricochet": 2,
             "bounce": 2
@@ -65,10 +67,7 @@
         }
       }
     },
-    "animation": "spell_engine:one_handed_projectile_release",
-    "sound": {
-      "id": "spell_engine:generic_frost_release"
-    }
+    "animation": "spell_engine:one_handed_projectile_release"
   },
   "impact": [
     {

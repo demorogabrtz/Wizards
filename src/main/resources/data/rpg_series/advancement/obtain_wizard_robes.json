@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "wizards:wizard_robe_chest"
+      "id": "wizards:wizard_robe_chest"
     },
     "title": {
       "translate": "advancements.rpg_series.obtain_wizard_robes.title"

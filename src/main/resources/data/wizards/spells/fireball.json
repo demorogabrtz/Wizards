@@ -1,6 +1,7 @@
 {
   "school": "FIRE",
   "group": "primary",
+  "rank": 2,
   "range": 64,
   "learn": {
     "tier": 1
@@ -27,11 +28,12 @@
     "target": {
       "type": "PROJECTILE",
       "projectile": {
+        "launch_properties": {
+          "velocity": 1.25,
+          "sound": { "id": "spell_engine:generic_fire_release" }
+        },
         "projectile": {
           "homing_angle": 1.0,
-          "launch_properties": {
-            "velocity": 1.5
-          },
           "client_data": {
             "travel_particles": [
               {
@@ -70,10 +72,7 @@
         }
       }
     },
-    "animation": "spell_engine:one_handed_projectile_release",
-    "sound": {
-      "id": "spell_engine:generic_fire_release"
-    }
+    "animation": "spell_engine:one_handed_projectile_release"
   },
   "impact": [
     {

@@ -1,26 +1,26 @@
 {
   "display": {
     "icon": {
-      "item": "wizards:staff_arcane"
+      "id": "wizards:staff_fire"
     },
     "title": {
-      "translate": "advancements.rpg_series.spell_master_arcane.title"
+      "translate": "advancements.rpg_series.spell_master_fire.title"
     },
     "description": {
-      "translate": "advancements.rpg_series.spell_master_arcane.description"
+      "translate": "advancements.rpg_series.spell_master_fire.description"
     },
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "rpg_series:spell_novice_arcane",
+  "parent": "rpg_series:spell_novice_fire",
   "criteria": {
     "bind": {
       "trigger": "spell_engine:spell_binding",
       "conditions": {
         "complete": true,
-        "spell_pool": "wizards:arcane"
+        "spell_pool": "wizards:fire"
       }
     }
   },
