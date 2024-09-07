@@ -1,5 +1,6 @@
 package net.wizards.client;
 
+import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.util.Identifier;
 import net.spell_engine.api.effect.CustomModelStatusEffect;
 import net.spell_engine.api.effect.CustomParticleStatusEffect;
@@ -13,8 +14,9 @@ import net.wizards.effect.Effects;
 
 import java.util.List;
 
-public class WizardsClientMod {
-    public static void initialize() {
+public class WizardsClientMod implements ClientModInitializer {
+    @Override
+    public void onInitializeClient() {
         CustomModels.registerModelIds(List.of(
                 Identifier.of(WizardsMod.ID, "projectile/arcane_missile"),
                 Identifier.of(WizardsMod.ID, "projectile/fireball_projectile"),
