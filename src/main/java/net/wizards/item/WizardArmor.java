@@ -18,11 +18,8 @@ import net.wizards.client.armor.WizardArmorRenderer;
 import java.util.function.Consumer;
 
 public class WizardArmor extends Armor.CustomItem implements GeoItem {
-    public final RegistryEntry<ArmorMaterial> customMaterial;
-
-    public WizardArmor(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
-        super(material, type, settings);
-        this.customMaterial = material;
+    public WizardArmor(RegistryEntry<ArmorMaterial> material, Type slot, Settings settings) {
+        super(material, slot, settings);
     }
 
     // MARK: GeoItem

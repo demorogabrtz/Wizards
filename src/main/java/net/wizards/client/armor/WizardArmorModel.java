@@ -2,7 +2,6 @@ package net.wizards.client.armor;
 
 import mod.azure.azurelibarmor.common.api.client.model.GeoModel;
 import net.minecraft.util.Identifier;
-import net.spell_engine.api.item.armor.Armor;
 import net.wizards.WizardsMod;
 import net.wizards.item.WizardArmor;
 
@@ -14,7 +13,7 @@ public class WizardArmorModel extends GeoModel<WizardArmor> {
 
     @Override
     public Identifier getTextureResource(WizardArmor armor) {
-        var textureId = Armor.getLayerId(armor.customMaterial.value().layers().getFirst());
+        var textureId = armor.getFirstLayerId();
         return Identifier.of(textureId.getNamespace(), "textures/armor/" + textureId.getPath() + ".png");
     }
 
