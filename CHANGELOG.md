@@ -3,6 +3,7 @@
 - Update to Minecraft 1.21.1
 - Fire Staves and Wands now come with the basic Fireball spell
 - Tome of Fire first spell to unlock is now Pyroblast
+- Adjust balance of basic staff spells
 
 # 1.3.0
 
