@@ -1,3 +1,9 @@
+# 1.4.0
+
+- Update to Minecraft 1.21.1
+- Fire Staves and Wands now come with the basic Fireball spell
+- Tome of Fire first spell to unlock is now Pyroblast
+
 # 1.3.0
 
 - Increased velocity for tier 1 projectile spells
