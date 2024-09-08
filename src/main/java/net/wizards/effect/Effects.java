@@ -17,7 +17,7 @@ import net.wizards.WizardsMod;
 import java.util.ArrayList;
 
 public class Effects {
-    private static ArrayList<Entry> entries = new ArrayList<>();
+    private static final ArrayList<Entry> entries = new ArrayList<>();
     public static class Entry {
         public final Identifier id;
         public final StatusEffect effect;
@@ -31,6 +31,10 @@ public class Effects {
 
         public void register() {
             registryEntry = Registry.registerReference(Registries.STATUS_EFFECT, id, effect);
+        }
+
+        public Identifier modifierId() {
+            return Identifier.of(WizardsMod.ID, "effect." + id.getPath());
         }
     }
 
@@ -67,7 +71,7 @@ public class Effects {
         /// Adding attribute modifier here due to relying on config value
         arcaneCharge.effect.addAttributeModifier(
                 SpellSchools.ARCANE.attributeEntry,
-                Identifier.of(WizardsMod.ID, "effect.arcane_charge"),
+                arcaneCharge.modifierId(),
                 WizardsMod.tweaksConfig.value.arcane_charge_damage_per_stack,
                 EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
 
