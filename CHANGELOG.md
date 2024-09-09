@@ -1,3 +1,8 @@
+# 2.0.1
+
+- Update dependency declarations
+- Allow running on 1.21
+
 # 2.0.0
 
 - Update to Minecraft 1.21.1
