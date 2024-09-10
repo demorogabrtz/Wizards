@@ -1,3 +1,7 @@
+# 2.0.2
+
+- Slightly reduce Fireball knockback
+
 # 2.0.1
 
 - Update dependency declarations
