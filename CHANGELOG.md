@@ -1,6 +1,7 @@
 # 2.0.2
 
 - Slightly reduce Fireball knockback
+- Update dependencies
 
 # 2.0.1
 
