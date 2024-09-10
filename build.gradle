@@ -39,7 +39,7 @@ dependencies {
     // Dependencies
     include(implementation("com.github.ZsoltMolnarrr:TinyConfig:${project.tiny_config_version}"))
     modImplementation("mod.azure.azurelibarmor:azurelibarmor-fabric-${project.azure_mc_version}:${project.azure_lib_version}")
-    modImplementation("maven.modrinth:structure-pool-api:${project.structure_pool_api_version}")
+    include(modImplementation("maven.modrinth:structure-pool-api:${project.structure_pool_api_version}"))
     modImplementation("maven.modrinth:runes:${project.runes_version}")
 
     modImplementation("maven.modrinth:spell-engine:${project.spell_engine_version}")
@@ -119,6 +119,7 @@ if(project.hasProperty('release_type')) {
             changelogType = 'markdown'
             releaseType = release_type
             addGameVersion "${project.minecraft_version}"
+            addGameVersion "${project.minecraft_compat_version}"
             addGameVersion "Fabric"
 
             relations {
@@ -147,7 +148,7 @@ if(project.hasProperty('release_type')) {
         versionNumber = "${version}" // You don't need to set this manually. Will fail if Modrinth has this version already
         versionType = release_type // This is the default -- can also be `beta` or `alpha`
         uploadFile = remapJar // With Loom, this MUST be set to `remapJar` instead of `jar`!
-        gameVersions = ["${project.minecraft_version}"] // Must be an array, even with only one version
+        gameVersions = ["${project.minecraft_version}", "${project.minecraft_compat_version}"] // Must be an array, even with only one version
         loaders = ["fabric"] // Must also be an array - no need to specify this if you're using Loom or ForgeGradle
         changelog = changelog_last_section()
         dependencies { // A special DSL for creating dependencies
