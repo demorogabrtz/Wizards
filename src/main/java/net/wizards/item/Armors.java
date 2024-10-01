@@ -81,6 +81,24 @@ public class Armors {
             10,
             SoundHelper.wizard_robes_equip.entry(), WOOL_INGREDIENTS);
 
+    public static RegistryEntry<ArmorMaterial> material_netherite_arcane = material(
+            "netherite_arcane_robe",
+            1, 3, 2, 1,
+            15,
+            SoundHelper.wizard_robes_equip.entry(), () -> { return Ingredient.ofItems(Items.NETHERITE_INGOT); });
+
+    public static RegistryEntry<ArmorMaterial> material_netherite_fire = material(
+            "netherite_fire_robe",
+            1, 3, 2, 1,
+            15,
+            SoundHelper.wizard_robes_equip.entry(), () -> { return Ingredient.ofItems(Items.NETHERITE_INGOT); });
+
+    public static RegistryEntry<ArmorMaterial> material_netherite_frost = material(
+            "netherite_frost_robe",
+            1, 3, 2, 1,
+            15,
+            SoundHelper.wizard_robes_equip.entry(), () -> { return Ingredient.ofItems(Items.NETHERITE_INGOT); });
+
     public static final ArrayList<Armor.Entry> entries = new ArrayList<>();
     private static Armor.Entry create(RegistryEntry<ArmorMaterial> material, Identifier id, int durability, Armor.Set.ItemFactory factory, ItemConfig.ArmorSet defaults) {
         var entry = Armor.Entry.create(
@@ -93,6 +111,16 @@ public class Armors {
         return entry;
     }
 
+    private static final float spell_power_t1 = 0.2F;
+    private static final float spell_power_t2 = 0.25F;
+    private static final float spell_power_t3 = 0.3F;
+    private static final float crit_damage_t2 = 0.1F;
+    private static final float crit_chance_t2 = 0.02F;
+    private static final float haste_t2 = 0.03F;
+    private static final float crit_damage_t3 = 0.1F;
+    private static final float crit_chance_t3 = 0.02F;
+    private static final float haste_t3 = 0.03F;
+
     public static final Armor.Set wizardRobeSet = create(
             material_wizard,
             Identifier.of(WizardsMod.ID, "wizard_robe"),
@@ -100,20 +128,23 @@ public class Armors {
             WizardArmor::new,
             ItemConfig.ArmorSet.with(
                     new ItemConfig.ArmorSet.Piece(1)
-                            .addAll(ItemConfig.Attribute.bonuses(List.of(SpellSchools.ARCANE.id, SpellSchools.FIRE.id, SpellSchools.FROST.id), 1)),
+                            .add(ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, spell_power_t1))
+                            .add(ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, spell_power_t1))
+                            .add(ItemConfig.Attribute.multiply(SpellSchools.FROST.id, spell_power_t1)),
                     new ItemConfig.ArmorSet.Piece(3)
-                            .addAll(ItemConfig.Attribute.bonuses(List.of(SpellSchools.ARCANE.id, SpellSchools.FIRE.id, SpellSchools.FROST.id), 1)),
+                            .add(ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, spell_power_t1))
+                            .add(ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, spell_power_t1))
+                            .add(ItemConfig.Attribute.multiply(SpellSchools.FROST.id, spell_power_t1)),
                     new ItemConfig.ArmorSet.Piece(2)
-                            .addAll(ItemConfig.Attribute.bonuses(List.of(SpellSchools.ARCANE.id, SpellSchools.FIRE.id, SpellSchools.FROST.id), 1)),
+                            .add(ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, spell_power_t1))
+                            .add(ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, spell_power_t1))
+                            .add(ItemConfig.Attribute.multiply(SpellSchools.FROST.id, spell_power_t1)),
                     new ItemConfig.ArmorSet.Piece(1)
-                            .addAll(ItemConfig.Attribute.bonuses(List.of(SpellSchools.ARCANE.id, SpellSchools.FIRE.id, SpellSchools.FROST.id), 1))
+                            .add(ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, spell_power_t1))
+                            .add(ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, spell_power_t1))
+                            .add(ItemConfig.Attribute.multiply(SpellSchools.FROST.id, spell_power_t1))
             ))
             .armorSet();
-
-    private static final float specializedRobeSpellPower = 0.25F;
-    private static final float specializedRobeCritDamage = 0.1F;
-    private static final float specializedRobeCritChance = 0.02F;
-    private static final float specializedRobeHaste = 0.03F;
 
     public static final Armor.Set arcaneRobeSet = create(
             material_arcane,
@@ -123,23 +154,23 @@ public class Armors {
             ItemConfig.ArmorSet.with(
                     new ItemConfig.ArmorSet.Piece(1)
                             .addAll(List.of(
-                                    ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, specializedRobeSpellPower),
-                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, specializedRobeHaste)
+                                    ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, spell_power_t2),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, haste_t2)
                             )),
                     new ItemConfig.ArmorSet.Piece(3)
                             .addAll(List.of(
-                                    ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, specializedRobeSpellPower),
-                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, specializedRobeHaste)
+                                    ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, spell_power_t2),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, haste_t2)
                             )),
                     new ItemConfig.ArmorSet.Piece(2)
                             .addAll(List.of(
-                                    ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, specializedRobeSpellPower),
-                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, specializedRobeHaste)
+                                    ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, spell_power_t2),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, haste_t2)
                             )),
                     new ItemConfig.ArmorSet.Piece(1)
                             .addAll(List.of(
-                                    ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, specializedRobeSpellPower),
-                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, specializedRobeHaste)
+                                    ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, spell_power_t2),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, haste_t2)
                             ))
             ))
             .armorSet();
@@ -152,23 +183,23 @@ public class Armors {
             ItemConfig.ArmorSet.with(
                     new ItemConfig.ArmorSet.Piece(1)
                             .addAll(List.of(
-                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, specializedRobeSpellPower),
-                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, specializedRobeCritChance)
+                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, spell_power_t2),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, crit_chance_t2)
                             )),
                     new ItemConfig.ArmorSet.Piece(3)
                             .addAll(List.of(
-                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, specializedRobeSpellPower),
-                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, specializedRobeCritChance)
+                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, spell_power_t2),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, crit_chance_t2)
                             )),
                     new ItemConfig.ArmorSet.Piece(2)
                             .addAll(List.of(
-                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, specializedRobeSpellPower),
-                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, specializedRobeCritChance)
+                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, spell_power_t2),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, crit_chance_t2)
                             )),
                     new ItemConfig.ArmorSet.Piece(1)
                             .addAll(List.of(
-                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, specializedRobeSpellPower),
-                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, specializedRobeCritChance)
+                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, spell_power_t2),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, crit_chance_t2)
                             ))
             ))
             .armorSet();
@@ -181,23 +212,111 @@ public class Armors {
             ItemConfig.ArmorSet.with(
                     new ItemConfig.ArmorSet.Piece(1)
                             .addAll(List.of(
-                                    ItemConfig.Attribute.multiply(SpellSchools.FROST.id, specializedRobeSpellPower),
-                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, specializedRobeCritDamage)
+                                    ItemConfig.Attribute.multiply(SpellSchools.FROST.id, spell_power_t2),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, crit_damage_t2)
                             )),
                     new ItemConfig.ArmorSet.Piece(3)
                             .addAll(List.of(
-                                    ItemConfig.Attribute.multiply(SpellSchools.FROST.id, specializedRobeSpellPower),
-                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, specializedRobeCritDamage)
+                                    ItemConfig.Attribute.multiply(SpellSchools.FROST.id, spell_power_t2),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, crit_damage_t2)
                             )),
                     new ItemConfig.ArmorSet.Piece(2)
                             .addAll(List.of(
-                                    ItemConfig.Attribute.multiply(SpellSchools.FROST.id, specializedRobeSpellPower),
-                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, specializedRobeCritDamage)
+                                    ItemConfig.Attribute.multiply(SpellSchools.FROST.id, spell_power_t2),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, crit_damage_t2)
                             )),
                     new ItemConfig.ArmorSet.Piece(1)
                             .addAll(List.of(
-                                    ItemConfig.Attribute.multiply(SpellSchools.FROST.id, specializedRobeSpellPower),
-                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, specializedRobeCritDamage)
+                                    ItemConfig.Attribute.multiply(SpellSchools.FROST.id, spell_power_t2),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, crit_damage_t2)
+                            ))
+            ))
+            .armorSet();
+
+
+    public static final Armor.Set netherite_arcane = create(
+            material_netherite_arcane,
+            Identifier.of(WizardsMod.ID, "netherite_arcane_robe"),
+            30,
+            WizardArmor::new,
+            ItemConfig.ArmorSet.with(
+                    new ItemConfig.ArmorSet.Piece(1)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, spell_power_t3),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, haste_t3)
+                            )),
+                    new ItemConfig.ArmorSet.Piece(3)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, spell_power_t3),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, haste_t3)
+                            )),
+                    new ItemConfig.ArmorSet.Piece(2)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, spell_power_t3),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, haste_t3)
+                            )),
+                    new ItemConfig.ArmorSet.Piece(1)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.ARCANE.id, spell_power_t3),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.HASTE.id, haste_t3)
+                            ))
+            ))
+            .armorSet();
+
+    public static final Armor.Set netherite_fire = create(
+            material_netherite_fire,
+            Identifier.of(WizardsMod.ID, "netherite_fire_robe"),
+            30,
+            WizardArmor::new,
+            ItemConfig.ArmorSet.with(
+                    new ItemConfig.ArmorSet.Piece(1)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, spell_power_t3),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, crit_chance_t3)
+                            )),
+                    new ItemConfig.ArmorSet.Piece(3)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, spell_power_t3),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, crit_chance_t3)
+                            )),
+                    new ItemConfig.ArmorSet.Piece(2)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, spell_power_t3),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, crit_chance_t3)
+                            )),
+                    new ItemConfig.ArmorSet.Piece(1)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.FIRE.id, spell_power_t3),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_CHANCE.id, crit_chance_t3)
+                            ))
+            ))
+            .armorSet();
+
+    public static final Armor.Set netherite_frost = create(
+            material_netherite_frost,
+            Identifier.of(WizardsMod.ID, "netherite_frost_robe"),
+            30,
+            WizardArmor::new,
+            ItemConfig.ArmorSet.with(
+                    new ItemConfig.ArmorSet.Piece(1)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.FROST.id, spell_power_t3),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, crit_damage_t3)
+                            )),
+                    new ItemConfig.ArmorSet.Piece(3)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.FROST.id, spell_power_t3),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, crit_damage_t3)
+                            )),
+                    new ItemConfig.ArmorSet.Piece(2)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.FROST.id, spell_power_t3),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, crit_damage_t3)
+                            )),
+                    new ItemConfig.ArmorSet.Piece(1)
+                            .addAll(List.of(
+                                    ItemConfig.Attribute.multiply(SpellSchools.FROST.id, spell_power_t3),
+                                    ItemConfig.Attribute.multiply(SpellPowerMechanics.CRITICAL_DAMAGE.id, crit_damage_t3)
                             ))
             ))
             .armorSet();

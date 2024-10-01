@@ -23,7 +23,7 @@ public class WizardsMod implements ModInitializer {
     public static final String ID = "wizards";
 
     public static ConfigManager<ItemConfig> itemConfig = new ConfigManager<>
-            ("items_v5", Default.itemConfig)
+            ("items_v6", Default.itemConfig)
             .builder()
             .setDirectory(ID)
             .sanitize(true)

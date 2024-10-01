@@ -1,3 +1,10 @@
+# 2.1.0
+
+- Add new armor set: Netherite Arcane Robes
+- Add new armor set: Netherite Fire Robes
+- Add new armor set: Netherite Frost Robes
+- Rebalance armor and weapon attributes
+
 # 2.0.2
 
 - Slightly reduce Fireball knockback
