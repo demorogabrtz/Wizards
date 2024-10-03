@@ -64,8 +64,8 @@
               }
             ],
             "model": {
-              "model_id": "wizards:projectile/fireball_projectile",
-              "render": "DEEP"
+              "model_id": "wizards:projectile/fire_blast",
+              "scale": 0.9
             }
           }
         }

@@ -18,11 +18,13 @@ public class WizardsClientMod implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         CustomModels.registerModelIds(List.of(
+                Identifier.of(WizardsMod.ID, "projectile/arcane_bolt"),
                 Identifier.of(WizardsMod.ID, "projectile/arcane_missile"),
-                Identifier.of(WizardsMod.ID, "projectile/fireball_projectile"),
+                Identifier.of(WizardsMod.ID, "projectile/fireball"),
+                Identifier.of(WizardsMod.ID, "projectile/fire_blast"),
                 Identifier.of(WizardsMod.ID, "projectile/fire_meteor"),
-                Identifier.of(WizardsMod.ID, "projectile/frostbolt_projectile"),
-                Identifier.of(WizardsMod.ID, "projectile/frost_shard_projectile"),
+                Identifier.of(WizardsMod.ID, "projectile/frost_shard"),
+                Identifier.of(WizardsMod.ID, "projectile/frostbolt"),
                 ArcaneChargeRenderer.modelId,
                 FrozenRenderer.modelId,
                 FrostShieldRenderer.modelId_base,

@@ -55,9 +55,8 @@
               }
             ],
             "model": {
-              "model_id": "wizards:projectile/fireball_projectile",
-              "scale": 0.5,
-              "render": "DEEP"
+              "model_id": "wizards:projectile/fireball",
+              "scale": 0.5
             }
           }
         }

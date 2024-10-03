@@ -4,6 +4,7 @@
 - Add new armor set: Netherite Fire Robes
 - Add new armor set: Netherite Frost Robes
 - Rebalance armor and weapon attributes
+- Update spell projectile models and textures
 
 # 2.0.2
 

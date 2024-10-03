@@ -58,7 +58,7 @@
               }
             ],
             "model": {
-              "model_id": "wizards:projectile/frostbolt_projectile",
+              "model_id": "wizards:projectile/frost_shard",
               "scale": 0.8
             }
           }
